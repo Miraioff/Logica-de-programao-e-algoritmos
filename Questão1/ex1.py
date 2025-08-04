@@ -1,24 +1,19 @@
-# Dicionario para adicionar cores a saida do terminal
-cor = {'roxo' : '\033[1;35m',
-       'vermelho' : '\033[1;31m',
-       'amarelo' : '\033[1;33m',
-       'limpa' : '\033[m'}
-
-lin = f'{cor['amarelo']}=={cor['limpa']}'*25
+lin = f'=='*25
 print(lin)
-print(f'{cor['roxo']}{"BEM VINDO A LOJA DO FABRÍCIO GONÇALVES":^50}{cor['limpa']}')
+print(f'{"BEM VINDO A LOJA DO FABRÍCIO GONÇALVES":^50}')
 print(lin)
 
-# inputs do valor do pedido e da quantidade de parcelas
-valor_pedido = float(input(f'{cor['roxo']}Informe o valor do pedido: R$ '))
+# pede ao usuario o valor do pedido e a quantidade de parcelas
+valor_pedido = float(input(f'Informe o valor do pedido: R$ '))
 qtd_parcelas = int(input('Informe a quantidade de parcelas: '))
 print(lin)
 
 juros = 0
+#verifica o valor dos juros de acordo com as regras da empresa
 if qtd_parcelas <= 0:
   # se a quantidade de parcelas for <= 0, sera pedido para adicionar uma quantidade maior que 0.
   # O programa ira encerrar
-  print(f'{cor['vermelho']} Informe uma quantia de parcelas maior que zero')
+  print(f'Informe uma quantia de parcelas maior que zero')
   print(lin)
   exit()
 else:
@@ -45,6 +40,7 @@ else:
   #calculo do valor total.
   valor_total = valor_parcelas * qtd_parcelas
 
-  print(f'{cor['roxo']}O valor das parcelas é de: R$ {valor_parcelas:.2f}')
-  print(f'O valor total parcelado é R$ {valor_total:.2f}{cor['limpa']}')
+ #mostra os valores finais ao usuario
+  print(f'O valor das parcelas é de: R$ {valor_parcelas:.2f}')
+  print(f'O valor total parcelado é R$ {valor_total:.2f}')
   print(lin)
